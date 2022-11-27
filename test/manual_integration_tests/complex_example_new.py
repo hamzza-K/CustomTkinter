@@ -3,7 +3,7 @@ import tkinter.messagebox
 import customtkinter
 
 customtkinter.set_appearance_mode("System")  # Modes: "System" (standard), "Dark", "Light"
-customtkinter.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark-blue"
+customtkinter.set_default_color_theme("green")  # Themes: "blue" (standard), "green", "dark-blue"
 
 
 class App(customtkinter.CTk):
@@ -24,7 +24,8 @@ class App(customtkinter.CTk):
         self.sidebar_frame = customtkinter.CTkFrame(self, width=140)
         self.sidebar_frame.grid(row=0, column=0, rowspan=4, sticky="nsew")
         self.sidebar_frame.grid_rowconfigure(4, weight=1)
-        self.logo_label = customtkinter.CTkLabel(self.sidebar_frame, text="CustomTkinter", text_font=("Roboto", -16))
+
+        self.logo_label = customtkinter.CTkLabel(self.sidebar_frame, text="Kratzen", text_font=("Oswald", -16))
         self.logo_label.grid(row=0, column=0, padx=20, pady=(20, 10))
         self.sidebar_button_1 = customtkinter.CTkButton(self.sidebar_frame, command=self.sidebar_button_callback)
         self.sidebar_button_1.grid(row=1, column=0, padx=20, pady=10)
@@ -56,6 +57,7 @@ class App(customtkinter.CTk):
         # create radiobutton frame
         self.radiobutton_frame = customtkinter.CTkFrame(self)
         self.radiobutton_frame.grid(row=0, column=3, padx=(10, 20), pady=(20, 10), sticky="nsew")
+
         self.radio_var = tkinter.IntVar(value=0)
         self.label_radio_group = customtkinter.CTkLabel(master=self.radiobutton_frame, text="CTkRadioButton Group:")
         self.label_radio_group.grid(row=0, column=2, columnspan=1, padx=10, pady=10, sticky="")
@@ -69,6 +71,7 @@ class App(customtkinter.CTk):
         # create optionemnu and combobox frame
         self.optionemnu_combobox_frame = customtkinter.CTkFrame(self)
         self.optionemnu_combobox_frame.grid(row=0, column=2, padx=(10, 10), pady=(20, 10), sticky="nsew")
+
         self.optionmenu_1 = customtkinter.CTkOptionMenu(self.optionemnu_combobox_frame,
                                                         dynamic_resizing=False,
                                                         values=["Value 1", "Value 2", "Value Long Long Long"])
@@ -83,6 +86,7 @@ class App(customtkinter.CTk):
         # create checkbox and switch frame
         self.checkbox_slider_frame = customtkinter.CTkFrame(self)
         self.checkbox_slider_frame.grid(row=1, column=3, padx=(10, 20), pady=(10, 10), sticky="nsew")
+
         self.checkbox_1 = customtkinter.CTkCheckBox(master=self.checkbox_slider_frame)
         self.checkbox_1.grid(row=1, column=0, pady=(20, 10), padx=20, sticky="n")
         self.checkbox_2 = customtkinter.CTkCheckBox(master=self.checkbox_slider_frame)
